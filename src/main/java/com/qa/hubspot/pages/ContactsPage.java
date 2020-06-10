@@ -19,6 +19,7 @@ public class ContactsPage extends BasePage {
 	By jobTitle = By.xpath("//input[@data-field = 'jobtitle']");
 	By header = By.cssSelector("h1.private-header__heading");
 	By createContacttSecondary =  By.xpath("(//span[text()='Create contact'])[last()]");
+	// create test series
 
 	By contactsBackLink = By.xpath("(//*[text()='Contacts'])[position()=1]"); // or use 1 also
 
