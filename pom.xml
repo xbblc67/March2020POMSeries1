@@ -129,17 +129,6 @@
 					<version>2.19.1</version>
 
 					<configuration>
-						<forkCount>3</forkCount>
-						<reuseForks>true</reuseForks>
-						<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
-						<suiteXmlFiles>
-							<suiteXmlFile>src/test/resources/testrunners/testng_regression.xml</suiteXmlFile>
-						</suiteXmlFiles>
-
-						<argLine>
-							-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-						</argLine>
-
 						<testFailureIgnore>true</testFailureIgnore>
 					</configuration>
 				</plugin>
