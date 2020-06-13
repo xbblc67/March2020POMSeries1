@@ -42,8 +42,19 @@ public class BasePage {
 	 */
 //tlDriver is for thread local i.e. for pdf and extend report.
 	public WebDriver init_driver(Properties prop) {
+		
+		String browserName = null;
+		if (System.getProperty("browser") == null) {
+			browserName = prop.getProperty("browser");
+		} else {
+			browserName = System.getProperty("browser");
+		}
+
+		System.out.println("Running on --->" + browserName + " browser");
+
 		optionsManager = new OptionsManager(prop);
-		String browserName = prop.getProperty("browser");
+		
+	//	String browserName = prop.getProperty("browser");
 
 		if(browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
@@ -88,6 +99,7 @@ public class BasePage {
 				switch (env) {
 				case "qa":
 					path = "./src/main/java/com/qa/hubspot/config/qa.config.properties";
+					System.out.println("running in qa");
 					break;
 				case "dev":
 					path = "./src/main/java/com/qa/hubspot/config/dev.config.properties";
